@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._bAddFolder = new System.Windows.Forms.Button();
             this._bDelFolder = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@
             this._sftb = new CopyFiles.SfTextBox();
             this._cbOverwriteNew = new System.Windows.Forms.CheckBox();
             this._cbOverwriteAll = new System.Windows.Forms.CheckBox();
+            this._ttHint = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this._bAddFolder.Size = new System.Drawing.Size(140, 23);
             this._bAddFolder.TabIndex = 8;
             this._bAddFolder.Text = "Добавить папки";
+            this._ttHint.SetToolTip(this._bAddFolder, "Добавить папку в список\r\n<Ctrl>+<Ins>");
             this._bAddFolder.UseVisualStyleBackColor = true;
             // 
             // _bDelFolder
@@ -62,6 +65,7 @@
             this._bDelFolder.Size = new System.Drawing.Size(140, 23);
             this._bDelFolder.TabIndex = 9;
             this._bDelFolder.Text = "Удалить папки";
+            this._ttHint.SetToolTip(this._bDelFolder, "Удалить выбранную папку из списка\r\n<Ctrl> + <Del>");
             this._bDelFolder.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -84,6 +88,8 @@
             this._lbFolders.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this._lbFolders.Size = new System.Drawing.Size(280, 205);
             this._lbFolders.TabIndex = 0;
+            this._ttHint.SetToolTip(this._lbFolders, "Для добавления или удаления папок в списке\r\nперетащите или нажмите соответсвующую" +
+        " кнопку");
             // 
             // _lbSource
             // 
@@ -114,6 +120,7 @@
             this._bSaveSettings.TabIndex = 14;
             this._bSaveSettings.Text = "Сохранить настройки";
             this._bSaveSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this._ttHint.SetToolTip(this._bSaveSettings, "Сохраняет текущий список папок");
             this._bSaveSettings.UseVisualStyleBackColor = true;
             // 
             // _btnCopy
@@ -125,6 +132,7 @@
             this._btnCopy.Size = new System.Drawing.Size(140, 23);
             this._btnCopy.TabIndex = 13;
             this._btnCopy.Text = "Копировать";
+            this._ttHint.SetToolTip(this._btnCopy, "Начинает копирование");
             this._btnCopy.UseVisualStyleBackColor = true;
             this._btnCopy.Click += new System.EventHandler(this._btnCopy_Click);
             // 
@@ -146,6 +154,7 @@
             this._cbOverwriteNew.Size = new System.Drawing.Size(136, 17);
             this._cbOverwriteNew.TabIndex = 19;
             this._cbOverwriteNew.Text = "Заменять если новее";
+            this._ttHint.SetToolTip(this._cbOverwriteNew, "Заменяет существующий файл если он старый");
             this._cbOverwriteNew.UseVisualStyleBackColor = true;
             // 
             // _cbOverwriteAll
@@ -156,7 +165,14 @@
             this._cbOverwriteAll.Size = new System.Drawing.Size(141, 17);
             this._cbOverwriteAll.TabIndex = 18;
             this._cbOverwriteAll.Text = "Заменять одинаковые";
+            this._ttHint.SetToolTip(this._cbOverwriteAll, "Заменяет файл если такой уже существует");
             this._cbOverwriteAll.UseVisualStyleBackColor = true;
+            // 
+            // _ttHint
+            // 
+            this._ttHint.AutomaticDelay = 200;
+            this._ttHint.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this._ttHint.ToolTipTitle = "Подсказка";
             // 
             // FromSourceInFolders
             // 
@@ -194,5 +210,6 @@
         private SfTextBox _sftb;
         private System.Windows.Forms.CheckBox _cbOverwriteNew;
         private System.Windows.Forms.CheckBox _cbOverwriteAll;
+        private System.Windows.Forms.ToolTip _ttHint;
     }
 }

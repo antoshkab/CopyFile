@@ -43,7 +43,7 @@
             this._tbPath.ReadOnly = true;
             this._tbPath.Size = new System.Drawing.Size(64, 20);
             this._tbPath.TabIndex = 0;
-            this._ttControl.SetToolTip(this._tbPath, "Папка источник");
+            this._ttControl.SetToolTip(this._tbPath, "Перетащите или нажмите <...> для добавления папки");
             // 
             // _btnSourceFolder
             // 
@@ -55,7 +55,7 @@
             this._btnSourceFolder.Size = new System.Drawing.Size(24, 19);
             this._btnSourceFolder.TabIndex = 1;
             this._btnSourceFolder.Text = "...";
-            this._ttControl.SetToolTip(this._btnSourceFolder, "Выбрать папку источник");
+            this._ttControl.SetToolTip(this._btnSourceFolder, "Выбрать папку");
             this._btnSourceFolder.UseVisualStyleBackColor = true;
             this._btnSourceFolder.Click += new System.EventHandler(this._btnSourceFolder_Click);
             // 
