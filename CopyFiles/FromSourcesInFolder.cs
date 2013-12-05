@@ -164,7 +164,7 @@ namespace CopyFiles
         {
             var sfile = new FileInfo(sourceFile);
             var dFile = new FileInfo(destFile);
-            return sfile.LastWriteTime > dFile.LastWriteTime;
+            return (sfile.LastWriteTime > dFile.LastWriteTime) || (sfile.CreationTime > dFile.CreationTime);
         }
 
         #endregion
